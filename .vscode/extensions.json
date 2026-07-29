@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "ritwickdey.LiveServer",
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.auto-rename-tag",
+        "pranaygp.vscode-css-peek",
+        "zignd.html-css-class-completion"
+    ]
+}
