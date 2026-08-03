@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roasteira - Artisan coffee roasters. Single-origin beans, roasted weekly.">
+  <title>Roasteira | Artisan Coffee Roasters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <div class="loader-text">Brewing experience...</div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>We use cookies to enhance your browsing experience. By continuing, you agree to our <a href="#">Privacy Policy</a>.</p>
+    <button class="btn btn-primary" onclick="dismissCookie()">Accept</button>
+  </div>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#story" onclick="closeMenu()">Our Story</a>
+    <a href="#menu" onclick="closeMenu()">Menu</a>
+    <a href="#process" onclick="closeMenu()">Process</a>
+    <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="#newsletter" onclick="closeMenu()">Contact</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      Roasteira
+    </a>
+    <div class="nav-links">
+      <a href="#story">Our Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#process">Process</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="sunIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="moonIcon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#newsletter" class="btn btn-primary">Order Now</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="floating-bean"></div>
+    <div class="floating-bean"></div>
+    <div class="floating-bean"></div>
+    <div class="floating-bean"></div>
+    <div class="floating-bean"></div>
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span>Now roasting weekly in Brooklyn</div>
+      <h1>Crafted in small<br>batches. Served with <span>soul</span>.</h1>
+      <p>Single-origin beans, roasted weekly in the heart of the city. Experience coffee the way it was meant to be — pure, bold, unforgettable.</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">Explore our blends</a>
+        <a href="#story" class="btn btn-ghost">Our story</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-number" data-target="12">0</div><div class="stat-label">Origins sourced</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-number" data-target="5000">0</div><div class="stat-label">Happy customers</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-number" data-target="48">0</div><div class="stat-label">Hour roast freshness</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-number" data-target="98">0</div><div class="stat-label">% Satisfaction rate</div></div>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="section story" id="story">
+    <div class="section-header reveal">
+      <span class="section-tag">Our Story</span>
+      <h2 class="section-title">From farm to your morning cup</h2>
+      <p class="section-subtitle">We believe great coffee starts at the source. That is why we travel to origin, build relationships with farmers, and roast with intention.</p>
+    </div>
+    <div class="story-grid">
+      <div class="story-image reveal-left">
+        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80" alt="Coffee roasting process" loading="lazy">
+        <div class="story-image-badge">Est. 2019</div>
+      </div>
+      <div class="story-content reveal-right">
+        <h3>Direct trade, zero compromise</h3>
+        <p>We partner directly with farmers in Ethiopia, Colombia, and Guatemala. Every bean is hand-selected, roasted in micro-batches, and cupped for quality before it ever reaches your mug.</p>
+        <p>No middlemen. No shortcuts. Just exceptional coffee, ethically sourced and meticulously roasted.</p>
+        <div class="story-features">
+          <div class="story-feature">
+            <div class="story-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="story-feature-text"><h4>Ethically sourced</h4><p>Fair prices paid directly to farming cooperatives</p></div>
+          </div>
+          <div class="story-feature">
+            <div class="story-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="story-feature-text"><h4>Roasted to order</h4><p>Every bag roasted within 48 hours of shipping</p></div>
+          </div>
+          <div class="story-feature">
+            <div class="story-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <div class="story-feature-text"><h4>Community first</h4><p>1% of every sale supports local food banks</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="section menu" id="menu">
+    <div class="section-header reveal">
+      <span class="section-tag">Menu</span>
+      <h2 class="section-title">Our signature blends</h2>
+      <p class="section-subtitle">Each blend is roasted to highlight the unique character of its origin. Choose your adventure.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card reveal delay-1">
+        <div class="menu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg></div>
+        <h3>Ethiopian Yirgacheffe</h3>
+        <p>Bright, floral notes with a hint of bergamot and lemon zest. Light roast, complex acidity.</p>
+        <div class="price">$18 <span>/ 12oz</span></div>
+        <span class="tag bestseller">Bestseller</span>
+      </div>
+      <div class="menu-card reveal delay-2">
+        <div class="menu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg></div>
+        <h3>Colombian Huila</h3>
+        <p>Rich caramel sweetness with a smooth milk chocolate finish. Medium roast, balanced body.</p>
+        <div class="price">$16 <span>/ 12oz</span></div>
+        <span class="tag">New arrival</span>
+      </div>
+      <div class="menu-card reveal delay-3">
+        <div class="menu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg></div>
+        <h3>House Espresso</h3>
+        <p>Dark, bold, and velvety. Notes of toasted hazelnut and cocoa. Full body, lingering finish.</p>
+        <div class="price">$14 <span>/ 12oz</span></div>
+        <span class="tag">Classic</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section process" id="process">
+    <div class="section-header reveal">
+      <span class="section-tag">Process</span>
+      <h2 class="section-title">How we craft perfection</h2>
+      <p class="section-subtitle">From cherry to cup, every step matters. Here is how we ensure quality in every batch.</p>
+    </div>
+    <div class="process-timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-number">01</div>
+          <h3>Sourcing</h3>
+          <p>We visit origin farms personally, cupping hundreds of samples to find beans that meet our strict quality standards.</p>
+        </div>
+        <div class="timeline-visual reveal-scale delay-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <h4>Global sourcing</h4>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-number">02</div>
+          <h3>Roasting</h3>
+          <p>Small-batch roasting on vintage Probat drums. We profile each origin to unlock its unique flavor potential.</p>
+        </div>
+        <div class="timeline-visual reveal-scale delay-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+          <h4>Artisan roasting</h4>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-number">03</div>
+          <h3>Quality Control</h3>
+          <p>Every batch is cupped by our Q-graders. If it does not score 85+, it does not leave our roastery.</p>
+        </div>
+        <div class="timeline-visual reveal-scale delay-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <h4>Cupping scores</h4>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-number">04</div>
+          <h3>Delivery</h3>
+          <p>Shipped within 24 hours of roasting in recyclable, nitrogen-flushed bags to lock in freshness.</p>
+        </div>
+        <div class="timeline-visual reveal-scale delay-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <h4>Fast shipping</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials" id="testimonials">
+    <div class="section-header reveal">
+      <span class="section-tag">Reviews</span>
+      <h2 class="section-title">Loved by coffee enthusiasts</h2>
+      <p class="section-subtitle">Do not just take our word for it. Here is what our community has to say.</p>
+    </div>
+    <div class="testimonial-slider">
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial-slide">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">"The Ethiopian Yirgacheffe completely changed my morning routine. The floral notes are unlike anything I have had from a grocery store. Worth every penny."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SM</div>
+            <div class="testimonial-info"><h4>Sarah Mitchell</h4><p>Brooklyn, NY</p></div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">"As a former barista, I am picky about my beans. Roasteira consistently delivers some of the freshest, most flavorful coffee I have ever brewed at home."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JC</div>
+            <div class="testimonial-info"><h4>James Chen</h4><p>Portland, OR</p></div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">"The subscription is a game changer. Fresh beans at my door every two weeks, and the tasting notes card that comes with each bag is a lovely touch."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">ER</div>
+            <div class="testimonial-info"><h4>Emma Rodriguez</h4><p>Austin, TX</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-nav" id="testimonialNav"></div>
+      <div class="testimonial-arrows">
+        <button class="testimonial-arrow" onclick="prevSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="testimonial-arrow" onclick="nextSlide()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq" id="faq">
+    <div class="section-header reveal">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">Questions? Answered.</h2>
+      <p class="section-subtitle">Everything you need to know about our coffee, shipping, and subscriptions.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How fresh is the coffee when it arrives?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>We roast to order and ship within 24 hours. Your coffee arrives 2-3 days post-roast, right in the sweet spot for brewing — fresh enough to bloom beautifully, rested enough for optimal flavor.</p></div>
+      </div>
+      <div class="faq-item reveal delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you offer subscriptions?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>Yes! Choose weekly, bi-weekly, or monthly deliveries. Subscribers save 15% and get early access to limited seasonal releases. Pause, skip, or cancel anytime — no commitments.</p></div>
+      </div>
+      <div class="faq-item reveal delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What grind setting should I choose?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>We recommend whole bean for maximum freshness, but we offer grinding for all major brew methods: Espresso (fine), Pour Over (medium-fine), Drip (medium), French Press (coarse), and Cold Brew (extra coarse).</p></div>
+      </div>
+      <div class="faq-item reveal delay-3">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is your packaging eco-friendly?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>Absolutely. Our bags are made from recyclable materials with a compostable valve. We also offer a bag-return program — send back 10 empty bags and get a free 12oz bag on us.</p></div>
+      </div>
+      <div class="faq-item reveal delay-4">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you ship internationally?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>Currently we ship to the US and Canada. International shipping to the UK and EU is coming soon. Sign up for our newsletter to be the first to know when we expand.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="section newsletter" id="newsletter">
+    <div class="section-header reveal">
+      <span class="section-tag">Newsletter</span>
+      <h2 class="section-title">Join the roast list</h2>
+      <p class="section-subtitle">Get early access to limited releases, brewing guides, and exclusive subscriber-only discounts.</p>
+    </div>
+    <form class="newsletter-form reveal" id="newsletterForm" onsubmit="handleSubscribe(event)">
+      <input type="email" class="newsletter-input" id="emailInput" placeholder="your@email.com" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          Roasteira
+        </a>
+        <p>Artisan coffee roasters based in Brooklyn, NY. We believe every cup should tell a story — from the farm where it grew to the hands that roasted it.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">All Coffee</a></li>
+          <li><a href="#">Subscriptions</a></li>
+          <li><a href="#">Equipment</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sourcing</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Roasteira Coffee Co. &copy; 2024. All rights reserved.</p>
+      <div>
+        <a href="#" style="margin-right: 16px;">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

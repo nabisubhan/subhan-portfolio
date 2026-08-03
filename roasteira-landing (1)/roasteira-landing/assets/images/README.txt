@@ -1,0 +1,1 @@
+Place your local images here.\nThe current site uses an external Unsplash image for the story section.\nYou can replace it by changing the src in index.html line ~140.
